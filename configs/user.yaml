@@ -1,0 +1,10 @@
+base:
+  ACCESS_PRIVATE_KEY: 'chika!@3$'
+development:
+  ~compose: base
+
+test:
+  ~compose: base
+
+production:
+  ~compose: base

@@ -1,0 +1,13 @@
+base:
+  STORAGE: 'chika-public-image'
+  STORAGE_ID: ''
+  STORAGE_KEY: ''
+  REGION: 'ap-northeast-2'
+development:
+  ~compose: base
+
+test:
+  ~compose: base
+
+production:
+  ~compose: base

@@ -1,0 +1,29 @@
+base:
+  type: mariadb
+  host: "localhost"
+  db_username: 'root'
+  password: "chika"
+  database: "chika"
+  port: 3310
+  synchronize: true
+  logging: ["query", "error"]
+  logger: advanced-console
+  migrations: [ 'src/database/migrations/**/*.ts' ]
+  entities: [ 'src/api/models/**/*.ts' ]
+  seeds: [ 'src/database/seeds/**/*.seed.ts' ]
+  factories: [ 'src/database/factories/**/*.factory.ts' ]
+  migrations_dir: src/database/migrations
+  entities_dir: src/api/models
+
+development:
+  ~compose: base
+
+test:
+  ~compose: base
+  type: sqlite
+  name: memory
+  database: ':memory:'
+  logging: ["error"]
+
+production:
+  ~compose: base
